@@ -7,8 +7,19 @@ public class Contact {
     private String lastName;
     private String phoneNumber;
     private String company;
+
+
     private String email;
     private LocalDate birthday;
+
+    public Contact(String firstName, String lastName, String phoneNumber, String company, String email, LocalDate birthday) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.company = company;
+        this.email = email;
+        this.birthday = birthday;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -17,6 +28,7 @@ public class Contact {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
 
     public String getLastName() {
         return lastName;
@@ -42,6 +54,17 @@ public class Contact {
         this.company = company;
     }
 
+
+    @Override
+    public String toString() {
+        return  "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", company='" + company + '\'' +
+                ", email='" + email + '\'' +
+                ", birthday=" + birthday;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -56,21 +79,5 @@ public class Contact {
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
-    }
-
-    public Contact(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    public void showData() {
-        System.out.println( "Contact{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", company='" + company + '\'' +
-                ", email='" + email + '\'' +
-                ", birthday=" + birthday +
-                '}');
     }
 }
