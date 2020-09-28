@@ -1,13 +1,14 @@
-package ro.jademy.contactlist.model;
+package main.java.ro.jademy.contactlist.model;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import
 
 public class Smartphone {
-    private Owner owner;
+    private ro.jademy.contactlist.model.Owner owner;
     private int password;
     private List<Contact> contactList = new ArrayList<>();
     private static final String FILE_NAME = "contacts.csv";
@@ -63,9 +64,9 @@ public class Smartphone {
             System.out.println(header);
             String line;
             while((line= reader.readLine()) != null){
-               String lineSplitter[] = line.split(",");
-               Contact contact = new Contact(lineSplitter[0],lineSplitter[1],lineSplitter[2],lineSplitter[3],lineSplitter[4], LocalDate.parse(lineSplitter[5]));
-               contactList.add(contact);
+                String lineSplitter[] = line.split(",");
+                ro.jademy.contactlist.model.Contact contact = new Contact(lineSplitter[0],lineSplitter[1],lineSplitter[2],lineSplitter[3],lineSplitter[4], LocalDate.parse(lineSplitter[5]));
+                contactList.add(contact);
             }
         }catch(FileNotFoundException ex) {
             // File contacts = new File("C:\\Users\\Victor\\IdeaProjects\\contactList\\contacts.csv");
